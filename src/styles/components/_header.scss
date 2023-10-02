@@ -1,0 +1,245 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 51px;
+  padding-right: 50px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  @include to(1150px) {
+    display: block;
+    padding-left: 27px;
+    padding-right: 5px;
+    padding-bottom: 9px;
+  }
+  @include to(600px) {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+}
+
+
+.header__row {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #C4C4C4;
+  padding-right: 23px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  @include to(1150px) {
+    border-right: none;
+  }
+}
+
+.header__row-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include to(1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.header__name {
+  color: $black-color;
+  font-size: 29px;
+  font-weight: 300;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+
+  span {
+    display: inline-block;
+    margin-left: 9px;
+  }
+}
+
+.header__menu {
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  margin-left: 26px;
+  margin-right: 47px;
+  gap: 40px;
+  @include to(1150px) {
+    flex-direction: column;
+    margin: 0 0 57px 0;
+    gap: 43px;
+  }
+  @include to(1150px) {
+    margin: 0 0 25px 0;
+    gap: 20px;
+  }
+}
+
+.header__item {
+  color: $black-color;
+  font-size: 16px;
+  transition: 0.5s;
+  @include to(1150px){
+    font-size: 32px;
+  }
+  @include to(600px){
+    font-size: 22px;
+  }
+  &:hover{
+    color: $btn-color;
+  }
+}
+
+.header__btn {
+  padding: 8px 31px 9px 32px;
+  border: 1px solid $btn-color;
+  color: $btn-color;
+  font-size: 16px;
+  transition: 0.5s;
+  @include to(1150px) {
+    font-size: 32px;
+    margin-bottom: 90px;
+  }
+  @include to(600px) {
+    font-size: 22px;
+    margin-bottom: 45px;
+  }
+  &:hover{
+    background-color: $btn-color;
+    color: $white-color;
+  }
+}
+
+.header__contacts {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  @include to(1150px) {
+    gap: 7px;
+    margin-left: 0;
+  }
+}
+
+.header__mail {
+  margin-right: 13px;
+  .icon-mail{
+    font-size: 21px;
+    @include to(600px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.header__facebook {
+  .icon-facebook{
+    font-size: 26px;
+    @include to(600px) {
+      font-size: 30px;
+    }
+  }
+}
+
+
+.menu__btn {
+  @include from(1151px) {
+    display: none;
+  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: 25px;
+  height: 35px;
+}
+
+.menu__burger {
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin: 3px 0;
+  background-color: #000;
+  transition: all 0.3s;
+}
+
+.burger-position {
+  position: absolute;
+}
+
+.burger-top {
+  transform: rotate(-45deg);
+}
+
+.burger-middle {
+  opacity: 0;
+}
+
+.burger-bottom {
+  transform: rotate(45deg);
+}
+
+
+.mob-menu {
+  width: 100%;
+  @include to(1150px){
+    background-color: white;
+    height: 100vh;
+    position: absolute;
+    padding-top: 144px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: none;
+  }
+  @include to(600px){
+    padding-top: 70px;
+  }
+
+}
+
+.mob-menu__close {
+  margin-left: auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mob-menu__items {
+  list-style-type: none;
+}
+
+.mob-menu__item {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.mob-menu__link {
+  font-size: 15px;
+  color: #000;
+}
+
+.mob-menu__tel-container {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.mob-menu__tel-img {
+  margin-right: 10px;
+}
+
+.mob-menu__tel-text {
+  color: #000;
+}
+
+.mob-menu__soc {
+  padding-top: 30px;
+}
+
+.mob-menu__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 25px;
+}
+

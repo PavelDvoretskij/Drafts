@@ -1,0 +1,288 @@
+// Разрешения экранов
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// Максимальная ширина контента
+$max: 1006px;
+// Padding по бокам
+
+
+@mixin wrapper() {
+  @media screen and (max-width: $sm) {
+    $p: 20px;
+    max-width: $max + $p * 2;
+    padding: 0 $p;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    $p: 70px;
+    max-width: $max + $p * 2;
+    padding: 0 $p;
+  }
+  @media screen and (min-width: $lg) {
+    $p: 220px;
+    max-width: $max + $p * 2;
+    padding: 0 $p;
+  }
+  margin: 0 auto;
+}
+
+// sm
+// sm-lg
+// lg->
+
+
+// $n1 >= 1200px
+// $n2 992px - 1199px-----
+// $n3 768px - 991px
+// $n4 576px - 767px-----
+// $n5 < 576px
+
+
+// Шрифты
+// Шрифты
+@mixin font($name, $urlName, $weight, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: #{$weight};
+    src: url('../fonts/#{$urlName}.woff2') format('woff2'),
+    url('../fonts/#{$urlName}.woff') format('woff')
+  }
+}
+
+@mixin styles($name,$n1,$n2,$n3) {
+  $sm: 600px;
+  $lg: 1150px;
+  @media screen and (max-width: $sm) {
+    #{$name}: $n3 + px;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    #{$name}: $n2 + px;
+  }
+  @media screen and (min-width: $lg) {
+    #{$name}: $n1 + px;
+  }
+}
+
+
+@mixin widthHeight($n1,$n2,$n3) {
+  @media screen and (max-width: $sm) {
+    width: nth($n3, 1) + px;
+    height: nth($n3, 2) + px;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    width: nth($n2, 1) + px;
+    height: nth($n2, 2) + px;
+  }
+  @media screen and (min-width: $lg) {
+    width: nth($n1, 1) + px;
+    height: nth($n1, 2) + px;
+  }
+}
+
+@mixin marginAll($n1,$n2,$n3) {
+  @media screen and (max-width: $sm) {
+    margin: nth($n3, 1) + px nth($n3, 2)  + px nth($n3, 3)  + px nth($n3, 4)  + px;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    margin: nth($n2, 1) + px nth($n2, 2)  + px nth($n2, 3)  + px nth($n2, 4)  + px;
+  }
+  @media screen and (min-width: $lg) {
+    margin: nth($n1, 1) + px nth($n1, 2)  + px nth($n1, 3)  + px nth($n1, 4)  + px;
+  }
+}
+
+@mixin marginTwo($n1,$n2,$n3) {
+  @media screen and (max-width: $sm) {
+    margin: nth($n3, 1) + px nth($n3, 2)
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    margin: nth($n2, 1) + px nth($n2, 2)
+  }
+  @media screen and (min-width: $lg) {
+    margin: nth($n1, 1) + px nth($n1, 2)
+  }
+}
+
+
+@mixin paddingAll($n1,$n2,$n3) {
+  @media screen and (max-width: $sm) {
+    padding: nth($n3, 1) + px nth($n3, 2)  + px nth($n3, 3)  + px nth($n3, 4)  + px;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    padding: nth($n2, 1) + px nth($n2, 2)  + px nth($n2, 3)  + px nth($n2, 4)  + px;
+  }
+  @media screen and (min-width: $lg) {
+    padding: nth($n1, 1) + px nth($n1, 2)  + px nth($n1, 3)  + px nth($n1, 4)  + px;
+  }
+}
+
+
+@mixin paddingTwo($n1,$n2,$n3) {
+  @media screen and (max-width: $sm) {
+    padding: nth($n3, 1) + px nth($n3, 2)
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    padding: nth($n2, 1) + px nth($n2, 2)
+  }
+  @media screen and (min-width: $lg) {
+    padding: nth($n1, 1) + px nth($n1, 2)
+  }
+}
+
+
+// >= min_width
+@mixin from($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media screen and (min-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+
+// <= max_width
+@mixin to($max_width) {
+  @media screen and (max-width: $max_width) {
+    @content;
+  }
+}
+
+@mixin to-xxl {
+  @media screen and (max-width: 1399px) {
+    @content;
+  }
+}
+
+@mixin to-xl {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin to-lg {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin to-md {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin to-sm {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+// от min_width до max_width
+@mixin from-to($min_width, $max_width) {
+  @media screen and (min-width: $min_width) and (max-width: $max_width) {
+    @content;
+  }
+}
+
+// from-to-sm
+@mixin from-to-sm-md {
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin from-to-sm-lg {
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    @content;
+  }
+}
+@mixin from-to-sm-xl {
+  @media screen and (min-width: $sm) and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin from-to-sm-xxl {
+  @media screen and (min-width: $sm) and (max-width: $xxl) {
+    @content;
+  }
+}
+
+
+// from-to-md
+@mixin from-to-md-lg {
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin from-to-md-xl {
+  @media screen and (min-width: $md) and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin from-to-md-xxl {
+  @media screen and (min-width: $md) and (max-width: $xxl) {
+    @content;
+  }
+}
+
+// from-to-lg
+@mixin from-to-lg-xl {
+  @media screen and (min-width: $lg) and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin from-to-lg-xxl {
+  @media screen and (min-width: $lg) and (max-width: $xxl) {
+    @content;
+  }
+}
+
+// from-to-xl
+@mixin from-to-xl-xxl {
+  @media screen and (min-width: $xl) and (max-width: $xxl) {
+    @content;
+  }
+}
+
+
+
+
+
+
+

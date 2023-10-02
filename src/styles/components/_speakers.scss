@@ -1,0 +1,132 @@
+.speakers {
+  padding-top: 82px;
+  padding-bottom: 74px;
+  @include to(1150px) {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  @include to(600px) {
+    padding-top: 7px;
+  }
+
+}
+
+.speakers__title {
+  color: $black-color;
+  font-weight: 300;
+  font-size: 60px;
+  margin-bottom: 54px;
+  @include to(1150px) {
+    font-size: 50px;
+    margin-bottom: 68px;
+  }
+  @include to(600px) {
+    font-size: 40px;
+    margin-bottom: 52px;
+  }
+}
+
+.speakers__row {
+  position: relative;
+  display: flex;
+}
+
+.swiper {
+  max-width: 797px;
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.swiper-slide {
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 29%;
+    background-color: rgba(0, 128, 255, 0.70);
+    width: 100%;
+  }
+}
+
+.speakers__name {
+  position: absolute;
+  bottom: 15%;
+  padding-left: 32px;
+  font-weight: 500;
+  color: $white-color;
+  font-size: 24px;
+  @include to(1150px) {
+    padding-left: 24px;
+    bottom: 16%;
+  }
+  @include to(600px) {
+    font-size: 17.7px;
+  }
+}
+
+.speakers__company {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  padding-left: 32px;
+  color: $white-color;
+  font-size: 18px;
+  @include to(1150px) {
+    padding-left: 24px;
+    bottom: 5%;
+  }
+  @include to(600px) {
+    font-size: 14px;
+  }
+}
+
+
+.swiper-pagination-bullet {
+  width: 13px;
+  height: 13px;
+  font-size: 10px;
+  margin: 0 5.5px !important;
+  background-color: $black-color;
+}
+
+.s-button-prev {
+  position: absolute;
+  top: 175px;
+  left: -92px;
+  @include to(1000px) {
+    display: none;
+  }
+}
+
+.s-button-prev::after {
+  color: $black-color;
+  font-size: 87px;
+  transform: scaleX(0.65);
+}
+
+.s-button-next {
+  position: absolute;
+  top: 175px;
+  right: -92px;
+  @include to(1000px) {
+    display: none;
+  }
+}
+
+.s-button-next::after {
+  color: $black-color;
+  font-size: 87px;
+  transform: scaleX(0.65);
+}
+
+
+
+

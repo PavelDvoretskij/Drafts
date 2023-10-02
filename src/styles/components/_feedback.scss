@@ -1,0 +1,103 @@
+.feedback {
+  background-color: $black-color;
+  padding-top: 143px;
+  @include to(1150px) {
+    padding-top: 102px;
+  }
+  @include to(600px) {
+    padding-top: 76px;
+  }
+}
+
+.feedback__title {
+  @include styles(font-size, 60, 50, 40);
+  color: $white-color;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 140%;
+  margin-bottom: 58px;
+  @include to(600px) {
+    margin-bottom: 80px;
+  }
+}
+
+.feedback__form {
+}
+
+.feedback__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 26px;
+  margin-bottom: 28px;
+  @include to(1150px) {
+    column-gap: 27px;
+  }
+  @include to(600px) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 27px;
+    margin-bottom: 30px;
+  }
+}
+
+.feedback__field{
+  color: #737373;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.feedback__name {
+  background-color: $white-color;
+  padding: 13px 19px;
+  @include to(1150px) {
+    padding: 13px;
+  }
+  @include to(600px) {
+    padding: 13px 19px;
+  }
+}
+
+.feedback__email {
+  background-color: $white-color;
+  padding: 12px 32px;
+  @include to(1150px) {
+    padding: 13px 20px;
+  }
+  @include to(600px) {
+    grid-column: 1/2;
+    padding: 13px 32px;
+  }
+}
+
+.feedback__mess {
+  background-color: $white-color;
+  grid-column: 1/3;
+  height: 121px;
+  padding: 15px 19px;
+  @include to(600px) {
+    height: 125px;
+  }
+}
+
+.feedback__btn {
+  display: block;
+  margin-left: auto;
+  width: 241px;
+  height: 70.902px;
+  background-color: $btn-color;
+  text-align: center;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 9.38px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  &:hover{
+    background-color: darken($btn-color, 10%);
+  }
+  @include to(600px) {
+    margin-right: auto;
+    letter-spacing: 4.2px;
+  }
+}
