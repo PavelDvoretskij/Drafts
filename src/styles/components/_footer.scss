@@ -1,0 +1,41 @@
+.footer {
+  @include styles(padding-top, 106, 90, 50);
+  @include styles(padding-bottom, 165, 110, 70);
+  background-color: $black-color;
+}
+
+.footer__wrap {
+  display: flex;
+flex-direction: column;
+  align-items: center;
+}
+
+.footer__email {
+  @include styles(font-size, 40, 40, 28);
+  color: $white-color;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.footer__tel {
+  @include styles(font-size, 32, 32, 22);
+  color: $white-color;
+  font-weight: 300;
+  margin-bottom: 26px;
+  @include to(600px) {
+    margin-bottom: 19px;
+  }
+
+}
+
+.footer__info {
+  display: inline-block;
+  color: $white-color;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: underline;
+  transition: 0.5s;
+  &:hover{
+    color: $btn-color;
+  }
+}
